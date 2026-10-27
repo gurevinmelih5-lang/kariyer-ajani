@@ -1,0 +1,21 @@
+{
+  "name": "Kariyer Ajanı – Sabah Raporu",
+  "trigger_id": "trig_01FGE6E95VgHjdEvZvUz948p",
+  "cron_expression": "CRON_TZ=Europe/Istanbul 45 8 * * *",
+  "enabled": true,
+  "notifications": { "channel": { "email": false, "push": true } },
+  "mcp_connections": [
+    { "name": "Exa", "url": "https://mcp.exa.ai/mcp" },
+    { "name": "Gmail", "url": "https://gmailmcp.googleapis.com/mcp/v1" }
+  ],
+  "job_config": {
+    "ccr": {
+      "environment_id": "env_01A3EkXcrSdSnabVKx7wcxkR",
+      "session_context": {
+        "model": "claude-sonnet-5-5",
+        "allowed_tools": ["Bash", "Read", "Write", "WebSearch", "WebFetch", "PushNotification"]
+      },
+      "prompt_file": "prompt.md"
+    }
+  }
+}
